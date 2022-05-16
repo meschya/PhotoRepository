@@ -1,17 +1,12 @@
-//
-//  ViewController.swift
-//  PhotoRepository
-//
-//  Created by Egor Mesheryakov on 16.05.22.
-//
-
 import UIKit
 
 final class ViewController: UIViewController {
     // MARK: - Properties
     
     // MARK: Private
-    var centerCell: CardCollectionViewCell?
+
+    private var activityIndicator = UIActivityIndicatorView(style: .large)
+    private var centerCell: CardCollectionViewCell?
     private let personPhotoCollectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let layout = UICollectionViewFlowLayout()
 
@@ -36,6 +31,7 @@ final class ViewController: UIViewController {
     // MARK: Private
     
     private func fetchPersonInfo() {
+        showActivityIndicator()
         NetworkingManager.shared.getPersonInfo { result in
             switch result {
             case .success(var response):
@@ -44,6 +40,7 @@ final class ViewController: UIViewController {
                         response[person.key]?.photoURL = person.value.photoURL + person.key + ImageFormat.jpg.rawValue
                     }
                     self?.persons = response
+                    self?.hideActivityIndicator()
                 }
             case .failure(let error):
                 print(error)
@@ -93,6 +90,25 @@ final class ViewController: UIViewController {
     // MARK: - Helpers
 
     // MARK: Private
+    
+    private func showActivityIndicator() {
+        view.isUserInteractionEnabled = false
+        let viewController = tabBarController ?? navigationController ?? self
+        activityIndicator.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: viewController.view.frame.width,
+            height: viewController.view.frame.width
+        )
+        viewController.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        view.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+    }
 
     private func getPhotoURL(_ id: Dictionary<String, Person>.Keys.Element) -> String {
         let photoURL = Constants.baseUrl.rawValue + Endpoint.task.rawValue + id + ImageFormat.jpg.rawValue
@@ -109,7 +125,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell {
             let userName = Array(persons.values)[indexPath.row].userName
             let photoURL = Array(persons.keys)[indexPath.row]
-            cell.set(userName, getPhotoURL(photoURL))
+            DispatchQueue.main.async { [weak self] in
+                cell.set(userName, self?.getPhotoURL(photoURL) ?? "05")
+            }
+            cell.deleteHandler = {
+                self.persons.removeValue(forKey: Array(self.persons.keys)[indexPath.row])
+                self.personPhotoCollectionView.reloadData()
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -136,14 +158,18 @@ extension ViewController: UIScrollViewDelegate {
                                   y: personPhotoCollectionView.frame.size.height / 2 + personPhotoCollectionView.contentOffset.y)
         if let indexPath = personPhotoCollectionView.indexPathForItem(at: centerPoint), self.centerCell == nil {
             centerCell = (personPhotoCollectionView.cellForItem(at: indexPath) as! CardCollectionViewCell)
-            self.centerCell?.transformToLarge()
+            DispatchQueue.main.async {
+                self.centerCell?.transformToLarge()
+            }
         }
         
         if let cell = centerCell {
             let offsetX = centerPoint.x - cell.center.x
             if offsetX < -15 || offsetX > 15 {
-                cell.transformStandart()
-                self.centerCell = nil
+                DispatchQueue.main.async {
+                    cell.transformStandart()
+                    self.centerCell = nil
+                }
             }
         }
     }

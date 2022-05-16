@@ -11,9 +11,11 @@ final class CardCollectionViewCell: UICollectionViewCell {
     // MARK: Private
     
     private let mainView: UIView = .init()
+    private let trashImageView: UIImageView = .init()
     
     // MARK: Public
     
+    var deleteHandler: (() -> ())?
     var personImageView: UIImageView = .init()
     let personNameLabel: UILabel = .init()
     
@@ -63,6 +65,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
         addMainViewConstraints()
         addPersonImageViewConstraints()
         addPersonNameLabelConstraints()
+        addTrashImageViewConstraints()
     }
     
     private func addMainViewConstraints() {
@@ -88,6 +91,14 @@ final class CardCollectionViewCell: UICollectionViewCell {
         personNameLabel.trailingAnchor.constraint(equalTo: personImageView.trailingAnchor, constant: -20).isActive = true
     }
     
+    private func addTrashImageViewConstraints() {
+        trashImageView.translatesAutoresizingMaskIntoConstraints = false
+        trashImageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
+        trashImageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20).isActive = true
+        trashImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        trashImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
     // MARK: - Setups
     
     // MARK: Private
@@ -96,12 +107,14 @@ final class CardCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(mainView)
         mainView.addSubview(personImageView)
         personImageView.addSubview(personNameLabel)
+        mainView.addSubview(trashImageView)
     }
     
     private func addSetups() {
         addMainViewSetups()
         addPersonImageViewSetups()
         addPersonNameLabelSetups()
+        addTrashImageViewSetups()
     }
     
     private func addMainViewSetups() {
@@ -122,5 +135,22 @@ final class CardCollectionViewCell: UICollectionViewCell {
         personNameLabel.textAlignment = .center
         personNameLabel.adjustsFontSizeToFitWidth = true
         personNameLabel.minimumScaleFactor = 0.5
+    }
+    
+    private func addTrashImageViewSetups() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(deleteButtonClick))
+        trashImageView.isUserInteractionEnabled = true
+        trashImageView.addGestureRecognizer(tap)
+        trashImageView.image = UIImage(systemName: "trash")
+        trashImageView.tintColor = .systemRed
+        trashImageView.contentMode = .scaleAspectFill
+    }
+    
+    // MARK: - Actions
+    
+    // MARK: Private
+    
+    @objc private func deleteButtonClick() {
+        deleteHandler?()
     }
 }

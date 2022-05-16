@@ -13,9 +13,24 @@
 		BFB3FC0D28329D6C000B7B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC0B28329D6C000B7B21 /* Main.storyboard */; };
 		BFB3FC0F28329D6E000B7B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC0E28329D6E000B7B21 /* Assets.xcassets */; };
 		BFB3FC1228329D6E000B7B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC1028329D6E000B7B21 /* LaunchScreen.storyboard */; };
+		BFB3FC1F28329EAB000B7B21 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC1E28329EAB000B7B21 /* Enums.swift */; };
+		BFB3FC2128329EC1000B7B21 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC2028329EC1000B7B21 /* Person.swift */; };
+		BFB3FC2428329ED6000B7B21 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC2328329ED6000B7B21 /* NetworkingManager.swift */; };
+		BFB3FC2628329EF3000B7B21 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC2528329EF3000B7B21 /* CardCollectionViewCell.swift */; };
+		BFB3FC2B2832ABE0000B7B21 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC2A2832ABE0000B7B21 /* UIFont+.swift */; };
+		BFB3FC332832B46A000B7B21 /* BrutaProCompressed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC2C2832B46A000B7B21 /* BrutaProCompressed-Light.ttf */; };
+		BFB3FC342832B46A000B7B21 /* BrutaProCompressed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC2D2832B46A000B7B21 /* BrutaProCompressed-Bold.ttf */; };
+		BFB3FC352832B46A000B7B21 /* BrutaProCompressed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC2E2832B46A000B7B21 /* BrutaProCompressed-ExtraBold.ttf */; };
+		BFB3FC362832B46A000B7B21 /* BrutaProCompressed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC2F2832B46A000B7B21 /* BrutaProCompressed-Black.ttf */; };
+		BFB3FC372832B46A000B7B21 /* BrutaProCompressed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC302832B46A000B7B21 /* BrutaProCompressed-Regular.ttf */; };
+		BFB3FC382832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC312832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf */; };
+		BFB3FC392832B46A000B7B21 /* BrutaProCompressed-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC322832B46A000B7B21 /* BrutaProCompressed-Thin.ttf */; };
+		E929E5E46CF87438ED062EBA /* Pods_PhotoRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607C8BAC2EA088F32CEF02F /* Pods_PhotoRepository.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0607C8BAC2EA088F32CEF02F /* Pods_PhotoRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3FA596EA183EF4920D7B58 /* Pods-PhotoRepository.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRepository.release.xcconfig"; path = "Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository.release.xcconfig"; sourceTree = "<group>"; };
 		BFB3FC0228329D6C000B7B21 /* PhotoRepository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRepository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3FC0528329D6C000B7B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB3FC0728329D6C000B7B21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +39,19 @@
 		BFB3FC0E28329D6E000B7B21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB3FC1128329D6E000B7B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB3FC1328329D6E000B7B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB3FC1E28329EAB000B7B21 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BFB3FC2028329EC1000B7B21 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BFB3FC2328329ED6000B7B21 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		BFB3FC2528329EF3000B7B21 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFB3FC2A2832ABE0000B7B21 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		BFB3FC2C2832B46A000B7B21 /* BrutaProCompressed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Light.ttf"; sourceTree = "<group>"; };
+		BFB3FC2D2832B46A000B7B21 /* BrutaProCompressed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Bold.ttf"; sourceTree = "<group>"; };
+		BFB3FC2E2832B46A000B7B21 /* BrutaProCompressed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BFB3FC2F2832B46A000B7B21 /* BrutaProCompressed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Black.ttf"; sourceTree = "<group>"; };
+		BFB3FC302832B46A000B7B21 /* BrutaProCompressed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Regular.ttf"; sourceTree = "<group>"; };
+		BFB3FC312832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-ExtraLight.ttf"; sourceTree = "<group>"; };
+		BFB3FC322832B46A000B7B21 /* BrutaProCompressed-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Thin.ttf"; sourceTree = "<group>"; };
+		D5385E04BA370D7D5206F7F4 /* Pods-PhotoRepository.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRepository.debug.xcconfig"; path = "Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E929E5E46CF87438ED062EBA /* Pods_PhotoRepository.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30982FC4DBAC8BB7DF0DF5B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5385E04BA370D7D5206F7F4 /* Pods-PhotoRepository.debug.xcconfig */,
+				6D3FA596EA183EF4920D7B58 /* Pods-PhotoRepository.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BFB3FBF928329D6C000B7B21 = {
 			isa = PBXGroup;
 			children = (
 				BFB3FC0428329D6C000B7B21 /* PhotoRepository */,
 				BFB3FC0328329D6C000B7B21 /* Products */,
+				30982FC4DBAC8BB7DF0DF5B5 /* Pods */,
+				C125A293A2C05CE952A8A4F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,91 @@
 		BFB3FC0428329D6C000B7B21 /* PhotoRepository */ = {
 			isa = PBXGroup;
 			children = (
+				BFB3FC272832AB8B000B7B21 /* Font */,
+				BFB3FC2228329ECB000B7B21 /* Managers */,
+				BFB3FC1D28329DA8000B7B21 /* Enums */,
+				BFB3FC1C28329DA0000B7B21 /* Extension */,
+				BFB3FC1B28329D9C000B7B21 /* Models */,
+				BFB3FC1A28329D95000B7B21 /* Views */,
+				BFB3FC1928329D8C000B7B21 /* Controllers */,
 				BFB3FC0528329D6C000B7B21 /* AppDelegate.swift */,
 				BFB3FC0728329D6C000B7B21 /* SceneDelegate.swift */,
-				BFB3FC0928329D6C000B7B21 /* ViewController.swift */,
 				BFB3FC0B28329D6C000B7B21 /* Main.storyboard */,
 				BFB3FC0E28329D6E000B7B21 /* Assets.xcassets */,
 				BFB3FC1028329D6E000B7B21 /* LaunchScreen.storyboard */,
 				BFB3FC1328329D6E000B7B21 /* Info.plist */,
 			);
 			path = PhotoRepository;
+			sourceTree = "<group>";
+		};
+		BFB3FC1928329D8C000B7B21 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC0928329D6C000B7B21 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFB3FC1A28329D95000B7B21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC2528329EF3000B7B21 /* CardCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFB3FC1B28329D9C000B7B21 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC2028329EC1000B7B21 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFB3FC1C28329DA0000B7B21 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC2A2832ABE0000B7B21 /* UIFont+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BFB3FC1D28329DA8000B7B21 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC1E28329EAB000B7B21 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		BFB3FC2228329ECB000B7B21 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC2328329ED6000B7B21 /* NetworkingManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		BFB3FC272832AB8B000B7B21 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3FC2F2832B46A000B7B21 /* BrutaProCompressed-Black.ttf */,
+				BFB3FC2D2832B46A000B7B21 /* BrutaProCompressed-Bold.ttf */,
+				BFB3FC2E2832B46A000B7B21 /* BrutaProCompressed-ExtraBold.ttf */,
+				BFB3FC312832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf */,
+				BFB3FC2C2832B46A000B7B21 /* BrutaProCompressed-Light.ttf */,
+				BFB3FC302832B46A000B7B21 /* BrutaProCompressed-Regular.ttf */,
+				BFB3FC322832B46A000B7B21 /* BrutaProCompressed-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		C125A293A2C05CE952A8A4F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0607C8BAC2EA088F32CEF02F /* Pods_PhotoRepository.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB3FC1628329D6E000B7B21 /* Build configuration list for PBXNativeTarget "PhotoRepository" */;
 			buildPhases = (
+				037535CEF01D342C22279B4F /* [CP] Check Pods Manifest.lock */,
 				BFB3FBFE28329D6C000B7B21 /* Sources */,
 				BFB3FBFF28329D6C000B7B21 /* Frameworks */,
 				BFB3FC0028329D6C000B7B21 /* Resources */,
+				25C62A5F89ACF4F8AA8A3EA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +243,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB3FC382832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf in Resources */,
 				BFB3FC1228329D6E000B7B21 /* LaunchScreen.storyboard in Resources */,
+				BFB3FC352832B46A000B7B21 /* BrutaProCompressed-ExtraBold.ttf in Resources */,
+				BFB3FC342832B46A000B7B21 /* BrutaProCompressed-Bold.ttf in Resources */,
+				BFB3FC332832B46A000B7B21 /* BrutaProCompressed-Light.ttf in Resources */,
+				BFB3FC372832B46A000B7B21 /* BrutaProCompressed-Regular.ttf in Resources */,
+				BFB3FC392832B46A000B7B21 /* BrutaProCompressed-Thin.ttf in Resources */,
 				BFB3FC0F28329D6E000B7B21 /* Assets.xcassets in Resources */,
+				BFB3FC362832B46A000B7B21 /* BrutaProCompressed-Black.ttf in Resources */,
 				BFB3FC0D28329D6C000B7B21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		037535CEF01D342C22279B4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoRepository-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25C62A5F89ACF4F8AA8A3EA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFB3FBFE28329D6C000B7B21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB3FC2B2832ABE0000B7B21 /* UIFont+.swift in Sources */,
+				BFB3FC2128329EC1000B7B21 /* Person.swift in Sources */,
 				BFB3FC0A28329D6C000B7B21 /* ViewController.swift in Sources */,
 				BFB3FC0628329D6C000B7B21 /* AppDelegate.swift in Sources */,
+				BFB3FC2428329ED6000B7B21 /* NetworkingManager.swift in Sources */,
+				BFB3FC2628329EF3000B7B21 /* CardCollectionViewCell.swift in Sources */,
+				BFB3FC1F28329EAB000B7B21 /* Enums.swift in Sources */,
 				BFB3FC0828329D6C000B7B21 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +454,7 @@
 		};
 		BFB3FC1728329D6E000B7B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5385E04BA370D7D5206F7F4 /* Pods-PhotoRepository.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +482,7 @@
 		};
 		BFB3FC1828329D6E000B7B21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D3FA596EA183EF4920D7B58 /* Pods-PhotoRepository.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

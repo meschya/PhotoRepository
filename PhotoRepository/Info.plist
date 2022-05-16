@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BrutaProCompressed-Black.ttf</string>
+		<string>BrutaProCompressed-Bold.ttf</string>
+		<string>BrutaProCompressed-ExtraBold.ttf</string>
+		<string>BrutaProCompressed-ExtraLight.ttf</string>
+		<string>BrutaProCompressed-Light.ttf</string>
+		<string>BrutaProCompressed-Regular.ttf</string>
+		<string>BrutaProCompressed-Thin.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

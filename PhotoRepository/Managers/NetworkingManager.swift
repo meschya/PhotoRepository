@@ -15,7 +15,7 @@ final class NetworkingManager {
         case invalidURL
     }
     
-    //MARK: - Initialization
+    // MARK: - Initialization
     
     private init() {}
     

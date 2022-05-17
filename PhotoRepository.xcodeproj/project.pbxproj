@@ -25,6 +25,7 @@
 		BFB3FC372832B46A000B7B21 /* BrutaProCompressed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC302832B46A000B7B21 /* BrutaProCompressed-Regular.ttf */; };
 		BFB3FC382832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC312832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf */; };
 		BFB3FC392832B46A000B7B21 /* BrutaProCompressed-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FC322832B46A000B7B21 /* BrutaProCompressed-Thin.ttf */; };
+		BFB3FC3B2833A234000B7B21 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3FC3A2833A234000B7B21 /* UIView+.swift */; };
 		E929E5E46CF87438ED062EBA /* Pods_PhotoRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607C8BAC2EA088F32CEF02F /* Pods_PhotoRepository.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		BFB3FC302832B46A000B7B21 /* BrutaProCompressed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Regular.ttf"; sourceTree = "<group>"; };
 		BFB3FC312832B46A000B7B21 /* BrutaProCompressed-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-ExtraLight.ttf"; sourceTree = "<group>"; };
 		BFB3FC322832B46A000B7B21 /* BrutaProCompressed-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrutaProCompressed-Thin.ttf"; sourceTree = "<group>"; };
+		BFB3FC3A2833A234000B7B21 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		D5385E04BA370D7D5206F7F4 /* Pods-PhotoRepository.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRepository.debug.xcconfig"; path = "Target Support Files/Pods-PhotoRepository/Pods-PhotoRepository.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB3FC2A2832ABE0000B7B21 /* UIFont+.swift */,
+				BFB3FC3A2833A234000B7B21 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				BFB3FC0628329D6C000B7B21 /* AppDelegate.swift in Sources */,
 				BFB3FC2428329ED6000B7B21 /* NetworkingManager.swift in Sources */,
 				BFB3FC2628329EF3000B7B21 /* CardCollectionViewCell.swift in Sources */,
+				BFB3FC3B2833A234000B7B21 /* UIView+.swift in Sources */,
 				BFB3FC1F28329EAB000B7B21 /* Enums.swift in Sources */,
 				BFB3FC0828329D6C000B7B21 /* SceneDelegate.swift in Sources */,
 			);

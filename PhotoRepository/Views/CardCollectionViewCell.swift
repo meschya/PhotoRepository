@@ -12,10 +12,14 @@ final class CardCollectionViewCell: UICollectionViewCell {
     
     private let mainView: UIView = .init()
     private let trashImageView: UIImageView = .init()
+    private let userURLImageView: UIImageView = .init()
+    private let photoURLImageView: UIImageView = .init()
     
     // MARK: Public
     
     var deleteHandler: (() -> ())?
+    var userURLHandler: (() -> ())?
+    var photoURLHandler: (() -> ())?
     var personImageView: UIImageView = .init()
     let personNameLabel: UILabel = .init()
     
@@ -66,6 +70,8 @@ final class CardCollectionViewCell: UICollectionViewCell {
         addPersonImageViewConstraints()
         addPersonNameLabelConstraints()
         addTrashImageViewConstraints()
+        addUserURLImageViewConstraints()
+        addPhotoURLImageViewConstraints()
     }
     
     private func addMainViewConstraints() {
@@ -99,15 +105,33 @@ final class CardCollectionViewCell: UICollectionViewCell {
         trashImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
+    private func addUserURLImageViewConstraints() {
+        userURLImageView.translatesAutoresizingMaskIntoConstraints = false
+        userURLImageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
+        userURLImageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20).isActive = true
+        userURLImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        userURLImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    private func addPhotoURLImageViewConstraints() {
+        photoURLImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoURLImageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
+        photoURLImageView.leadingAnchor.constraint(equalTo: userURLImageView.leadingAnchor, constant: 30).isActive = true
+        photoURLImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        photoURLImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
     // MARK: - Setups
     
     // MARK: Private
     
     private func addSubviews() {
         contentView.addSubview(mainView)
-        mainView.addSubview(personImageView)
+        mainView.addSubviews(personImageView,
+                             trashImageView,
+                             photoURLImageView,
+                             userURLImageView)
         personImageView.addSubview(personNameLabel)
-        mainView.addSubview(trashImageView)
     }
     
     private func addSetups() {
@@ -115,6 +139,8 @@ final class CardCollectionViewCell: UICollectionViewCell {
         addPersonImageViewSetups()
         addPersonNameLabelSetups()
         addTrashImageViewSetups()
+        addUserURLImageViewSetups()
+        addPhotoURLImageViewSetups()
     }
     
     private func addMainViewSetups() {
@@ -146,11 +172,37 @@ final class CardCollectionViewCell: UICollectionViewCell {
         trashImageView.contentMode = .scaleAspectFill
     }
     
+    private func addUserURLImageViewSetups() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(userURLButtonClick))
+        userURLImageView.isUserInteractionEnabled = true
+        userURLImageView.addGestureRecognizer(tap)
+        userURLImageView.image = UIImage(systemName: "person")
+        userURLImageView.tintColor = .white
+        userURLImageView.contentMode = .scaleAspectFill
+    }
+    
+    private func addPhotoURLImageViewSetups() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(photoURLButtonClick))
+        photoURLImageView.isUserInteractionEnabled = true
+        photoURLImageView.addGestureRecognizer(tap)
+        photoURLImageView.image = UIImage(systemName: "photo")
+        photoURLImageView.tintColor = .white
+        photoURLImageView.contentMode = .scaleAspectFill
+    }
+    
     // MARK: - Actions
     
     // MARK: Private
     
     @objc private func deleteButtonClick() {
         deleteHandler?()
+    }
+    
+    @objc private func userURLButtonClick() {
+        userURLHandler?()
+    }
+    
+    @objc private func photoURLButtonClick() {
+        photoURLHandler?()
     }
 }

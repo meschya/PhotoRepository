@@ -11,4 +11,3 @@ enum Endpoint: String {
 enum ImageFormat: String {
     case jpg = ".jpg"
 }
-

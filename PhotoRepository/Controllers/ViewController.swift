@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 final class ViewController: UIViewController {
     // MARK: - Properties
@@ -114,6 +115,20 @@ final class ViewController: UIViewController {
         let photoURL = Constants.baseUrl.rawValue + Endpoint.task.rawValue + id + ImageFormat.jpg.rawValue
         return photoURL
     }
+    
+    private func presentFailedOpenAlert() {
+        let alert = UIAlertController(
+            title: "Unable to Open",
+            message: "We were unable to open the article",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    private func open(url: URL) {
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -122,15 +137,32 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let person = Array(self.persons.values)[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell {
-            let userName = Array(persons.values)[indexPath.row].userName
             let photoURL = Array(persons.keys)[indexPath.row]
             DispatchQueue.main.async { [weak self] in
-                cell.set(userName, self?.getPhotoURL(photoURL) ?? "05")
+                cell.set(person.userName, self?.getPhotoURL(photoURL) ?? "05")
             }
+            // Delete cell
             cell.deleteHandler = {
                 self.persons.removeValue(forKey: Array(self.persons.keys)[indexPath.row])
                 self.personPhotoCollectionView.reloadData()
+            }
+            // Open user_url
+            cell.userURLHandler = {
+                guard let url = URL(string: person.userURL) else {
+                    self.presentFailedOpenAlert()
+                    return
+                }
+                self.open(url: url)
+            }
+            // Open photo_url
+            cell.photoURLHandler = {
+                guard let url = URL(string: person.photoURL) else {
+                    self.presentFailedOpenAlert()
+                    return
+                }
+                self.open(url: url)
             }
             return cell
         }

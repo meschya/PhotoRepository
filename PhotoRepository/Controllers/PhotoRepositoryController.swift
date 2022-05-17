@@ -138,9 +138,10 @@ extension PhotoRepositoryController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let person = Array(self.persons.values)[indexPath.row]
+        let filterPersons = persons.sorted(by: { $0.value.userName < $1.value.userName })
+        let person = Array(filterPersons)[indexPath.row].value
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell {
-            let photoURL = Array(persons.keys)[indexPath.row]
+            let photoURL = Array(filterPersons)[indexPath.row].key
             DispatchQueue.main.async { [weak self] in
                 cell.set(person.userName, self?.getPhotoURL(photoURL) ?? "05")
             }

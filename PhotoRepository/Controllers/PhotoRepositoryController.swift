@@ -1,5 +1,5 @@
-import UIKit
 import SafariServices
+import UIKit
 
 final class PhotoRepositoryController: UIViewController {
     // MARK: - Properties
@@ -10,7 +10,6 @@ final class PhotoRepositoryController: UIViewController {
     private var centerCell: CardCollectionViewCell?
     private let personPhotoCollectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let layout = UICollectionViewFlowLayout()
-
     private var persons: PersonInfo = .init() {
         didSet {
             personPhotoCollectionView.reloadData()
@@ -121,7 +120,8 @@ final class PhotoRepositoryController: UIViewController {
         let alert = UIAlertController(
             title: "Unable to Open",
             message: "We were unable to open the article",
-            preferredStyle: .alert)
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(alert, animated: true)
     }
@@ -131,6 +131,8 @@ final class PhotoRepositoryController: UIViewController {
         present(vc, animated: true)
     }
 }
+
+// MARK: - UICollectionViewDelegate and UICollectionViewDataSource
 
 extension PhotoRepositoryController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -172,7 +174,11 @@ extension PhotoRepositoryController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+// MARK: - UIScrollViewDelegate
+
 extension PhotoRepositoryController: UIScrollViewDelegate {
+    // MARK: - Parallax
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for view in personPhotoCollectionView.visibleCells {
             let view: CardCollectionViewCell = view as! CardCollectionViewCell
@@ -185,7 +191,7 @@ extension PhotoRepositoryController: UIScrollViewDelegate {
         zoomCell()
     }
     
-    // MARK: - Helpers
+    // MARK: - Zoom Cell
     
     private func zoomCell() {
         let centerPoint = CGPoint(x: personPhotoCollectionView.frame.size.width / 2 + personPhotoCollectionView.contentOffset.x,

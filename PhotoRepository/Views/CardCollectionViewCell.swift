@@ -14,6 +14,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
     private let trashImageView: UIImageView = .init()
     private let userURLImageView: UIImageView = .init()
     private let photoURLImageView: UIImageView = .init()
+    private let personNameLabel: UILabel = .init()
     
     // MARK: Public
     
@@ -21,7 +22,6 @@ final class CardCollectionViewCell: UICollectionViewCell {
     var userURLHandler: (() -> ())?
     var photoURLHandler: (() -> ())?
     var personImageView: UIImageView = .init()
-    let personNameLabel: UILabel = .init()
     
     // MARK: - Initialization
     

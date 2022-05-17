@@ -20,4 +20,4 @@ MVC
 pod 'Kingfisher', '~> 7.0'
 ```
 
-![alt text](https://static.tildacdn.com/tild6263-3136-4231-a533-646562663163/__2022-05-17__153451.png)
+![alt text](https://static.tildacdn.com/tild6162-3130-4634-b365-623362343462/Frame_1.png)

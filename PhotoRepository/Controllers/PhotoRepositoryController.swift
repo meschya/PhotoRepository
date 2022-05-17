@@ -1,7 +1,7 @@
 import UIKit
 import SafariServices
 
-final class ViewController: UIViewController {
+final class PhotoRepositoryController: UIViewController {
     // MARK: - Properties
     
     // MARK: Private
@@ -70,6 +70,7 @@ final class ViewController: UIViewController {
     }
     
     private func addSetups() {
+        view.backgroundColor = .systemBackground
         addPersonPhotoCollectionViewSetups()
         addPersonPhotoCollectionViewSetupsUI()
     }
@@ -131,7 +132,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PhotoRepositoryController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return persons.count
     }
@@ -170,7 +171,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UIScrollViewDelegate {
+extension PhotoRepositoryController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for view in personPhotoCollectionView.visibleCells {
             let view: CardCollectionViewCell = view as! CardCollectionViewCell
@@ -197,7 +198,7 @@ extension ViewController: UIScrollViewDelegate {
         
         if let cell = centerCell {
             let offsetX = centerPoint.x - cell.center.x
-            if offsetX < -15 || offsetX > 15 {
+            if offsetX < -30 || offsetX > 30 {
                 DispatchQueue.main.async {
                     cell.transformStandart()
                     self.centerCell = nil
